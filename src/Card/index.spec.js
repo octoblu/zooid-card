@@ -1,3 +1,4 @@
+import _ from 'lodash'
 import chai, { expect } from 'chai'
 import chaiEnzyme from 'chai-enzyme'
 import React from 'react'
@@ -16,27 +17,34 @@ describe('<Card />', () => {
     const sut = shallow(<Card />)
     expect(sut).to.be.empty
   })
-})
+  describe('when given children as prop', () => {
+    let sut
 
-describe('when given children as prop', () => {
-  let sut
+    beforeEach(() => {
+      sut = shallow(<Card><div>Final Countdown!!!</div></Card>)
+    })
 
-  beforeEach(() => {
-    sut = shallow(<Card><div>Final Countdown!!!</div></Card>)
+    it('should render children', () => {
+      expect(sut).to.contain(<div>Final Countdown!!!</div>)
+    })
+
+    it('should render with style', () => {
+      expect(sut).to.have.className(styles.card)
+    })
   })
 
-  it('should render children', () => {
-    expect(sut).to.contain(<div>Final Countdown!!!</div>)
+  describe('when given a className', () => {
+    it('should merge classes', () => {
+      const sut = shallow(<Card className="always"><div>Final Countdown!!!</div></Card>)
+      expect(sut).to.have.className('always')
+    })
   })
 
-  it('should render with style', () => {
-    expect(sut).to.have.className(styles.card)
-  })
-})
-
-describe('when given a className', () => {
-  it('should merge classes', () => {
-    const sut = shallow(<Card className="always"><div>Final Countdown!!!</div></Card>)
-    expect(sut).to.have.className('always')
+  describe('when give props', () => {
+    it('should merge props on the root component', () => {
+      const sut = shallow(<Card className="custom-class" onClick={_.noop}>Bang!</Card>)
+      expect(sut).to.have.className('custom-class')
+      expect(sut).to.have.prop('onClick', _.noop)
+    })
   })
 })

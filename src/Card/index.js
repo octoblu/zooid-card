@@ -1,3 +1,4 @@
+import _ from 'lodash'
 import classNames from 'classnames'
 import isEmpty from 'lodash.isempty'
 import React, { PropTypes } from 'react'
@@ -9,11 +10,13 @@ const propTypes = {
   className: PropTypes.string,
 }
 
-const Card = ({ children, className }) => {
+const Card = (props) => {
+  const { children, className } = props
+
   if (isEmpty(children)) return null
   const classes = classNames(styles.card, className)
 
-  return <div className={classes}>{children}</div>
+  return React.createElement('div', { ...props, className: classes}, children)
 }
 
 Card.propTypes = propTypes
