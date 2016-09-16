@@ -1,9 +1,12 @@
 # zooid-card
 
 [![Build Status](https://travis-ci.org/octoblu/zooid-card.svg?branch=master)](https://travis-ci.org/octoblu/zooid-card)
-[![npm version](https://badge.fury.io/js/zooid-card.svg)](http://badge.fury.io/js/zooid-card)
-[![Code Climate](https://codeclimate.com/github/octoblu/zooid-card.png)](https://codeclimate.com/github/octoblu/zooid-card)
+[![Test Coverage](https://codecov.io/gh/octoblu/zooid-card/branch/master/graph/badge.svg)](https://codecov.io/gh/octoblu/zooid-card)
+[![Dependency status](http://img.shields.io/david/octoblu/zooid-card.svg?style=flat)](https://david-dm.org/octoblu/zooid-card)
+[![devDependency Status](http://img.shields.io/david/dev/octoblu/zooid-card.svg?style=flat)](https://david-dm.org/octoblu/zooid-card#info=devDependencies)
 [![Slack Status](http://community-slack.octoblu.com/badge.svg)](http://community-slack.octoblu.com)
+
+[![NPM](https://nodei.co/npm/zooid-card.svg?style=flat)](https://npmjs.org/package/zooid-card)
 
 A card styled container component.
 
